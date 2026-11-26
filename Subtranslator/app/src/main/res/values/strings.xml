@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Subtranslator</string>
+    <string name="select_file">Seleccionar archivo SRT</string>
+    <string name="translate">Traducir</string>
+    <string name="status_ready">Listo</string>
+    <string name="hint_source_language">Idioma de entrada (en, es, auto)</string>
+    <string name="hint_target_language">Idioma de salida (es, en, fr)</string>
+</resources>

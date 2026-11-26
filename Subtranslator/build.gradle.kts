@@ -1,0 +1,6 @@
+plugins {
+    id("com.android.application") version "8.4.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.20" apply false
+}
+
+true // keep the file valid for Kotlin DSL

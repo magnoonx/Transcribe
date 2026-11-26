@@ -1,0 +1,29 @@
+﻿
+# --- Modelos de Lenguaje y Pesos IA ---
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.h5
+*.ckpt
+*.tflite
+models/
+checkpoints/
+weights/
+
+# --- Entornos y Secretos ---
+.env
+venv/
+.venv/
+__pycache__/
+node_modules/
+ffmpeg.exe
+ffplay.exe
+ffprobe.exe
+SRT_SRT.rar
+.venv/Lib/site-packages/ctranslate2/ctranslate2.dll
+modelos/models--mobiuslabsgmbh--faster-whisper-large-v3-turbo/snapshots/0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf/model.bin
+modelos/models--Systran--faster-whisper-medium/snapshots/08e178d48790749d25932bbc082711ddcfdfbc4f/model.bin
+node_modules/electron/dist/electron.exe

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Traductor SRT</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <h1>Traductor SRT</h1>
+      <p class="lead">Sube un archivo .srt y traducciónalo con Google Translate.</p>
+
+      <form id="uploadForm">
+        <label class="file-label">
+          <input type="file" name="file" id="fileInput" accept=".srt" required />
+          <span>Seleccionar archivo SRT</span>
+        </label>
+
+        <div class="row">
+          <div class="col">
+            <label>Idioma origen</label>
+            <input type="text" name="source" id="source" placeholder="auto (detecta)" value="auto" />
+          </div>
+          <div class="col">
+            <label>Idioma destino</label>
+            <input type="text" name="target" id="target" placeholder="es" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>Desplazamiento de tiempos</label>
+            <div class="offset-controls">
+              <button type="button" class="offset-btn" data-step="-1">-1s</button>
+              <input type="number" name="time_offset_seconds" id="timeOffsetSeconds" value="0" step="1" min="-600" max="600" />
+              <button type="button" class="offset-btn" data-step="1">+1s</button>
+              <button type="button" class="offset-btn" data-step="5">+5s</button>
+            </div>
+            <div class="hint">Ajusta todos los subtítulos hacia delante o atrás para sincronizarlos con el video.</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <input type="checkbox" id="useLLM" name="use_llm" />
+          <label for="useLLM" style="font-size:14px;color:var(--muted);margin:0">Mejorar con IA (Groq) — solo oraciones potencialmente problemáticas</label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn">Traducir</button>
+      </form>
+
+      <div id="status" class="status" aria-live="polite"></div>
+      <div class="progress-wrap" style="margin-top:12px;display:none;">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:6px">Progreso</div>
+        <div class="progress-bar" style="background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden;height:12px">
+          <div id="progressFill" style="height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#5b21b6)"></div>
+        </div>
+        <div id="progressText" style="font-size:12px;color:var(--muted);margin-top:6px">0%</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
